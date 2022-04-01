@@ -3,14 +3,16 @@ import './Tshirt.css'
 
 const Tshirt = (props) => {
 
-    const {name, image, price, id} = props.tshirt
+    const {handleAddToCart, tshirt} = props;
+
+    const {name, image, price, id} = tshirt;
 
     return (
         <div className='t-shirt'>
             <img src={image} alt="" />
             <h4>Name: {name}</h4>
             <p>Price: ${price}</p>
-            <button>Add to Cart</button>
+            <button onClick={() => handleAddToCart(tshirt)}>Add to Cart</button>
         </div>
     );
 };
